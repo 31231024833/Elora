@@ -141,6 +141,11 @@
             flex-direction: column;
             border-radius: 8px;
             overflow: hidden;
+            transition: box-shadow .25s; /* Thêm hiệu ứng hover nhẹ */
+        }
+        
+        .recommended-slider .card:hover {
+             box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Thêm hiệu ứng hover nhẹ */
         }
 
         .recommended-slider .card-image {
@@ -365,16 +370,19 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="card-item">
-                    <div class="card">
-                        <div class="card-image"><img src="images/green-dot-hair-spa.jpg"></div>
-                        <div class="card-content">
-                            <span class="card-title">Green Dot Hair Spa</span>
-                            <p>4.9 <i class="material-icons tiny" style="color: #fbbc05;">star</i> (2,975)</p>
-                            <p class="truncate light">Bình Thạnh, Hồ Chí Minh</p>
-                            <div class="chip">Spa & phòng xông hơi khô</div>
+                    <a href="green-dot-hair-spa.html" style="color: inherit;">
+                        <div class="card">
+                            <div class="card-image"><img src="images/green-dot-hair-spa.jpg"></div>
+                            <div class="card-content">
+                                <span class="card-title">Green Dot Hair Spa</span>
+                                <p>4.9 <i class="material-icons tiny" style="color: #fbbc05;">star</i> (2,975)</p>
+                                <p class="truncate light">Bình Thạnh, Hồ Chí Minh</p>
+                                <div class="chip">Spa & phòng xông hơi khô</div>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="card-item">
                     <div class="card">
