@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Đăng ký - Elora</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link type="text/css" rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+        media="screen,projection" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        /* Thêm CSS để ảnh căn vừa vặn */
+        .responsive-img-container {
+            width: 100%;
+            height: 80vh;
+            /* Cao gần full màn hình */
+            min-height: 500px;
+        }
+
+        .responsive-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Cắt cúp ảnh cho vừa */
+        }
+
+        /* Căn giữa nội dung bên trái */
+        .form-selection {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 80vh;
+            /* Căn theo chiều cao của ảnh */
+            min-height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="container-fluid">
+        <div class="row" style="margin-bottom: 0;">
+
+            <div class="col s12 m7">
+                <div class="form-selection" style="padding-left: 10%;">
+                    <a href="form-dang-ky.html" class="light" style="color: #555; margin-bottom: 20px;">
+                        <i class="material-icons" style="vertical-align: middle;">arrow_back</i> Quay lại
+                    </a>
+                    <h3 style="font-weight: 600; color: #1f1f1f;">Đăng ký / Đăng nhập</h3>
+                    <p class="light" style="font-size: 1.2rem; color: #555;">Tham gia Elora với vai trò khách hàng hoặc
+                        chuyên gia.</p>
+
+                    <a href="form-chi-tiet.html" style="color: inherit;">
+                        <div class="card horizontal hoverable" style="margin-top: 30px;">
+                            <div class="card-stacked">
+                                <div class="card-content" style="padding: 24px 30px;">
+                                    <span class="card-title" style="font-weight: 600;">Elora dành cho khách hàng</span>
+                                    <p class="light">Đặt lịch hẹn với các tiệm làm đẹp và spa gần bạn.</p>
+                                </div>
+                            </div>
+                            <div class="card-image" style="display: flex; align-items: center; padding-right: 20px;">
+                                <i class="material-icons large grey-text text-lighten-1">arrow_forward</i>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#" style="color: inherit;">
+                        <div class="card horizontal hoverable">
+                            <div class="card-stacked">
+                                <div class="card-content" style="padding: 24px 30px;">
+                                    <span class="card-title" style="font-weight: 600;">Elora dành cho chuyên gia</span>
+                                    <p class="light">Quản lý và phát triển doanh nghiệp của bạn.</p>
+                                </div>
+                            </div>
+                            <div class="card-image" style="display: flex; align-items: center; padding-right: 20px;">
+                                <i class="material-icons large grey-text text-lighten-1">arrow_forward</i>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+
+            <div class="col s12 m5 hide-on-small-only">
+                <div class="responsive-img-container">
+                    <img src="images/lam-mong.jpg" alt="Elora Registration">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Kích hoạt Sidenav (menu di động)
+            var sidenav_elems = document.querySelectorAll('.sidenav');
+            M.Sidenav.init(sidenav_elems);
+        });
+    </script>
+</body>
+
+</html>

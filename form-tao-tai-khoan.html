@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tạo tài khoản - Elora</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link type="text/css" rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+        media="screen,projection" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        html,
+        body {
+            /* BỎ height: 100% và overflow: hidden */
+            margin: 0;
+            padding: 0;
+        }
+
+        .row.full-height {
+            /* BỎ height: 100% */
+            margin-bottom: 0;
+        }
+
+        .col.full-height {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            /* THAY height: 100% bằng min-height: 100vh */
+            /* Cột sẽ cao ít nhất 100% màn hình, nhưng có thể dài ra nếu cần */
+        }
+
+        .responsive-img-container {
+            width: 100%;
+            height: 100%;
+            /* Giữ 100% để nó lấp đầy cột cha */
+            overflow: hidden;
+        }
+
+        .responsive-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .form-selection {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /* Giữ để căn giữa form theo chiều dọc */
+            align-items: flex-start;
+            flex-grow: 1;
+            padding: 20px 10%;
+            /* BỎ overflow-y: auto; để tắt thanh cuộn riêng của cột */
+        }
+
+        [type="checkbox"].filled-in+span:not(.lever) {
+            color: #555;
+        }
+
+        .form-selection .input-field.col.s3 {
+            margin-top: 1rem;
+        }
+
+        .btn-submit {
+            background-color: #1f1f1f;
+            width: 100%;
+            height: 45px;
+            line-height: 45px !important;
+            text-transform: none;
+            font-weight: 600;
+            border-radius: 30px;
+            margin-top: 20px;
+        }
+
+        .input-field .suffix {
+            cursor: pointer;
+        }
+
+        /* CSS cho nút quay lại */
+        .back-link {
+            display: flex;
+            align-items: center;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .back-link i {
+            margin-right: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="row full-height">
+
+        <div class="col s12 m6 full-height">
+            <div class="form-selection">
+
+                <a href="#" class="back-link">
+                    <i class="material-icons">arrow_back</i> Quay lại
+                </a>
+
+                <h4 style="font-weight: 600; color: #1f1f1f; margin-top: 0;">Tạo tài khoản</h4>
+                <p class="light" style="font-size: 1rem; color: #555;">
+                    Bạn sắp hoàn tất rồi! Hãy tạo tài khoản mới của bạn với
+                    <strong style="color: #333;">Quangziem135@gmail.com</strong>
+                    bằng cách hoàn tất các chi tiết này
+                </p>
+
+                <form action="#" method="POST" style="width: 100%;">
+                    <div class="row" style="margin-top: 20px;">
+                        <div class="input-field col s12">
+                            <input id="first_name" type="text" class="validate" required>
+                            <label for="first_name">Tên *</label>
+                        </div>
+
+                        <div class="input-field col s12">
+                            <input id="last_name" type="text" class="validate" required>
+                            <label for="last_name">Họ *</label>
+                        </div>
+
+                        <div class="input-field col s12">
+                            <input id="password" type="password" class="validate" required>
+                            <label for="password">Mật khẩu *</label>
+                            <i class="material-icons suffix" onclick="togglePassword()">visibility_off</i>
+                        </div>
+
+                        <div class="row" style="margin-bottom: 0;">
+                            <div class="input-field col s3">
+                                <select id="country_code">
+                                    <option value="+84" selected>+84</option>
+                                    <option value="+1">+1</option>
+                                    <option value="+44">+44</option>
+                                    <option value="+61">+61</option>
+                                </select>
+                            </div>
+                            <div class="input-field col s9">
+                                <input id="phone" type="tel" class="validate" required>
+                                <label for="phone">Số điện thoại di động *</label>
+                            </div>
+                        </div>
+
+                        <div class="col s12" style="margin-top: 15px;">
+                            <p>
+                                <label>
+                                    <input type="checkbox" class="filled-in" required />
+                                    <span>Tôi đồng ý với <a href="#">Chính sách quyền riêng tư</a>, <a href="#">Điều
+                                            khoản sử dụng</a> và <a href="#">Điều khoản dịch
+                                            vụ</a></span>
+                                </label>
+                            </p>
+                        </div>
+
+                        <div class="col s12" style="margin-top: 10px;">
+                            <p>
+                                <label>
+                                    <input type="checkbox" class="filled-in" />
+                                    <span>Tôi đồng ý nhận thông báo tiếp thị với các ưu đãi và tin tức</span>
+                                </label>
+                            </p>
+                        </div>
+
+                        <div class="col s12">
+                            <button class="btn btn-submit waves-effect waves-light" type="submit" name="action">
+                                Tiếp tục
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="center" style="margin-top: 30px; font-size: 0.9rem; width: 100%;">
+                    <a href="#" class="grey-text text-darken-1" style="margin-right: 20px;">
+                        <i class="material-icons" style="font-size: 1.2rem; vertical-align: middle;">language</i>
+                        Tiếng Việt (VN)
+                    </a>
+                    <a href="#" class="grey-text text-darken-1">
+                        <i class="material-icons" style="font-size: 1.2rem; vertical-align: middle;">help_outline</i>
+                        Trợ giúp và hỗ trợ
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col s12 m6 hide-on-small-only full-height">
+            <div class="responsive-img-container">
+                <img src="images/dang-ky.jpg" alt="Elora Registration">
+            </div>
+        </div>
+
+    </div>
+
+
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var sidenav_elems = document.querySelectorAll('.sidenav');
+            M.Sidenav.init(sidenav_elems);
+
+            var select_elems = document.querySelectorAll('select');
+            M.FormSelect.init(select_elems);
+        });
+
+        function togglePassword() {
+            var input = document.getElementById('password');
+            var icon = document.querySelector('#password ~ .suffix');
+
+            if (input.type === "password") {
+                input.type = "text";
+                icon.innerText = "visibility";
+            } else {
+                input.type = "password";
+                icon.innerText = "visibility_off";
+            }
+        }
+    </script>
+</body>
+
+</html>
