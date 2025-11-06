@@ -4,66 +4,34 @@
 <head>
     <title>Elora - Đặt lịch làm đẹp & Spa</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
-
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Quicksand:wght@400;600&family=Rubik:wght@400;600&display=swap"
+        rel="stylesheet">
     <link type="text/css" rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
         media="screen,projection" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
-        /* 1. Áp dụng font Manrope */
-        body,
-        h1,
-        h3,
-        h4,
-        h5,
-        .btn,
-        .card-title,
-        .input-field label,
-        .brand-logo,
-        .chip,
-        .card-content p {
-            font-family: 'Manrope', 'Roboto', sans-serif;
-        }
-
-        /* 2. Tùy chỉnh logo Elora */
         .brand-logo {
-            font-weight: 700 !important;
+            color: #141414 !important;
+            margin-left: 70px;
+            font-family: 'Nunito', 'Quicksand', 'Rubik', 'Roboto', sans-serif;
+            font-weight: 600;
         }
 
-        /* 3. Tùy chỉnh Navbar cho giống Fresha */
-        nav.white {
-            box-shadow: none !important;
-            border-bottom: 1px solid #e0e0e0 !important;
-            height: 64px;
-            line-height: 64px;
+        .custom-right-nav {
+            margin-right: 60px;
         }
 
-        /* 4. Tùy chỉnh nút "Đăng nhập"*/
-        .btn-login {
-            background-color: #1f1f1f !important;
-            color: #ffffff !important;
-            border-radius: 50px !important;
-            border: 2px solid #1f1f1f !important;
-            text-transform: none !important;
-            font-weight: 600 !important;
-            box-shadow: none !important;
+        nav ul a:hover {
+            background-color: #bfbfbf;
         }
-
-        .btn-login:hover {
-            background-color: #ffffff !important;
-            color: #1f1f1f !important;
-        }
-
 
         .parallax-container {
             min-height: 400px;
+            /* Điều chỉnh chiều cao của banner */
             line-height: 0;
             height: auto;
             color: rgba(255, 255, 255, .9);
@@ -71,6 +39,7 @@
 
         .parallax img {
             filter: brightness(0.7);
+            /* Làm mờ ảnh để chữ nổi bật hơn */
         }
 
         .hero-text {
@@ -82,11 +51,13 @@
             width: 80%;
             color: #fff;
             z-index: 2;
+            /* Đảm bảo chữ nằm trên ảnh */
         }
 
         .hero-text h1 {
             font-size: 4.5rem;
-            font-weight: 800 !important;
+            /* Tăng kích thước chữ tiêu đề */
+            font-weight: 700;
             line-height: 1.2;
             margin-bottom: 20px;
         }
@@ -94,6 +65,7 @@
         .hero-text .btn-large {
             border-radius: 50px;
             background-color: #fbbc05;
+            /* Nút màu vàng nổi bật */
             color: #1f1f1f;
             font-weight: 600;
             padding: 0 40px;
@@ -103,54 +75,64 @@
 
         .hero-text .btn-large:hover {
             background-color: #e0a500;
+            /* Màu khi hover */
         }
 
-        /* CSS cho slider phẳng "Được đề xuất" (Vẫn giữ) */
+        /* --- Custom CSS cho slider phẳng có mũi tên --- */
         .recommended-slider-wrapper {
             position: relative;
             overflow: hidden;
+            /* Ẩn phần bị tràn ra ngoài */
+            padding: 0 50px;
+            /* Tạo không gian cho mũi tên */
         }
 
         .recommended-slider {
             display: flex;
+            /* Dùng flexbox để các item nằm ngang */
             overflow-x: scroll;
+            /* Cho phép cuộn ngang */
             scroll-behavior: smooth;
+            /* Cuộn mượt mà */
             -webkit-overflow-scrolling: touch;
+            /* Cuộn mượt trên thiết bị di động */
             padding-bottom: 20px;
-            padding-left: 20px;
-            padding-right: 20px;
+            /* Tránh item bị cắt nếu có scrollbar */
             margin: 0 -10px;
+            /* Bù lại padding bên trong card-item */
             scrollbar-width: none;
+            /* Ẩn scrollbar cho Firefox */
             -ms-overflow-style: none;
+            /* Ẩn scrollbar cho IE/Edge */
         }
 
         .recommended-slider::-webkit-scrollbar {
             display: none;
+            /* Ẩn scrollbar cho Chrome/Safari */
         }
 
         .recommended-slider .card-item {
             flex: 0 0 auto;
+            /* Không co giãn, giữ kích thước ban đầu */
             width: 250px;
+            /* Chiều rộng cố định cho mỗi card */
             margin: 0 10px;
+            /* Khoảng cách giữa các card */
         }
 
         .recommended-slider .card {
             margin: 0;
+            /* Loại bỏ margin mặc định của card */
             height: 100%;
+            /* Đảm bảo card chiếm hết chiều cao */
             display: flex;
             flex-direction: column;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: box-shadow .25s; /* Thêm hiệu ứng hover nhẹ */
-        }
-        
-        .recommended-slider .card:hover {
-             box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Thêm hiệu ứng hover nhẹ */
         }
 
         .recommended-slider .card-image {
             height: 180px;
             flex-shrink: 0;
+            /* Đảm bảo ảnh không bị co */
         }
 
         .recommended-slider .card-image img {
@@ -161,6 +143,7 @@
         .recommended-slider .card-content {
             padding: 16px;
             flex-grow: 1;
+            /* Cho phép nội dung card giãn ra */
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -187,7 +170,7 @@
         .slider-nav-btn {
             position: absolute;
             top: 50%;
-            transform: translateY(-60%);
+            transform: translateY(-50%);
             background-color: white;
             border-radius: 50%;
             width: 40px;
@@ -201,43 +184,143 @@
         }
 
         .slider-nav-btn.left {
-            left: 15px;
+            left: 0;
         }
 
         .slider-nav-btn.right {
-            right: 15px;
+            right: 0;
         }
 
         .slider-nav-btn i.material-icons {
             color: #1f1f1f;
         }
+
+        .custom-menu-btn {
+            float: none !important;
+            font-size: 16px;
+            margin-right: 12px;
+            height: 50px !important;
+            display: inline-flex !important;
+            color: #141414 !important;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ccc;
+            border-radius: 30px;
+            padding: 4px 16px;
+            background-color: white;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .custom-menu-btn-transparent {
+            float: none !important;
+            margin-right: 12px;
+            height: 50px !important;
+            display: inline-flex !important;
+            color: #141414 !important;
+            align-items: center;
+            justify-content: center;
+            border: 1px transparent #ccc;
+            border-radius: 30px;
+            padding: 4px 16px;
+            background-color: transparent;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .custom-menu-btn span {
+            margin-right: 8px;
+        }
+
+        .custom-menu-btn i {
+            font-size: 20px;
+        }
+
+        nav {
+            position: fixed;
+            /* Stick to top */
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: transparent !important;
+            /* Transparent initially */
+            box-shadow: none !important;
+            /* Remove default shadow */
+            z-index: 1000;
+            /* Ensure it's above parallax */
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        nav.scrolled {
+            background-color: #fff !important;
+            /* Solid color on scroll */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+            /* Optional shadow */
+        }
+
+        nav.scrolled a.custom-menu-btn-transparent {
+            color: #141414 !important;
+        }
+
+        nav.scrolled .brand-logo {
+            color: #141414 !important;
+        }
+
+        main {
+            padding-top: 64px;
+            /* Adjust based on navbar height */
+        }
+
+        @media (max-width: 768px) {
+            .brand-logo {
+                left: auto !important;
+                color: #141414 !important;
+            }
+
+            .header.center {
+                font-size: 3.0rem !important;
+            }
+        }
+
+        /* --- End Custom CSS --- */
     </style>
 </head>
 
 <body>
-
-    <nav class="white" role="navigation">
-        <div class="nav-wrapper container">
-            <a id="logo-container" href="#" class="brand-logo" style="color: #000;">Elora</a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="#" style="color: #000;">Dịch vụ</a></li>
-                <li><a href="#" style="color: #000;">Về chúng tôi</a></li>
-                <li><a href="form-dang-ky.html" style="color: #000;">Đăng ký</a></li>
-                <li><a href="form-dang-ky.html" class="waves-effect waves-light btn btn-login">Đăng nhập</a></li>
+    <!-- Navbar -->
+    <nav>
+        <div class="nav-wrapper">
+            <a id="logo-container" href="#" class="brand-logo">Elora</a>
+            <a href="#" data-target="slide-out" class="sidenav-trigger right" style="color: #141414;">
+                <i class="material-icons">menu</i>
+            </a>
+            <ul class="right hide-on-med-and-down custom-right-nav">
+                <li><a class="custom-menu-btn-transparent" href="#">Đăng nhập</a></li>
+                <li><a href="form-dang-ky.html" class="custom-menu-btn">Đăng ký tài khoản</a></li>
+                <a href="#" data-target="dropdown" class="custom-menu-btn dropdown-trigger right">
+                    <span>Menu</span>
+                    <i class="material-icons">menu</i>
+                </a>
             </ul>
-
-            <ul id="nav-mobile" class="sidenav">
-                <li><a href="#">Dịch vụ</a></li>
-                <li><a href="#">Về chúng tôi</a></li>
-                <li><a href="form-dang-ky.html">Đăng ký</a></li>
-                <li><a class="waves-effect waves-light btn btn-login">Đăng nhập</a></li>
-            </ul>
-            <a href="#" data-target="nav-mobile" class="sidenav-trigger" style="color: #000;"><i
-                    class="material-icons">menu</i></a>
         </div>
     </nav>
 
-    <div class="parallax-container valign-wrapper">
+    <!-- Sidenav -->
+    <ul id="slide-out" class="sidenav">
+        <li><a href="#login">Đăng nhập</a></li>
+        <li><a href="#form-dang-ky.html">Đăng ký tài khoản</a></li>
+        <li><a href="#about">Giới thiệu</a></li>
+        <li><a href="#product">Dịch vụ</a></li>
+        <li><a href="#contact">Liên hệ</a></li>
+    </ul>
+    <!-- Dropdown Nav -->
+    <ul id="dropdown" class="dropdown-content">
+        <li><a href="#about">Giới thiệu</a></li>
+        <li><a href="#product">Dịch vụ</a></li>
+        <li><a href="#contact">Liên hệ</a></li>
+    </ul>
+
+    <div class="parallax-container valign-wrapper" style="margin-top: 64px;">
         <div class="section no-pad-bot">
             <div class="container hero-text">
                 <h1 class="header center" style="color: #fff;">
@@ -252,27 +335,25 @@
         <div class="container">
             <div class="card"
                 style="border-radius: 50px; padding: 10px 10px 0 10px; margin-top: -100px; position: relative; z-index: 10;">
-
-                <div class="row valign-wrapper" style="margin-bottom: 0;">
+                <div class="row" style="margin-bottom: 0;">
                     <div class="input-field col s12 m3" style="border-right: 1px solid #ddd;">
                         <i class="material-icons prefix">search</i>
                         <input type="text" id="autocomplete-input" class="autocomplete">
                         <label for="autocomplete-input">Tất cả liệu trình, địa điểm...</label>
                     </div>
-                    <div class="input-field col s6 m3" style="border-right: 1px solid #ddd;">
+                    <div class="input-field col s12 m3" style="border-right: 1px solid #ddd;">
                         <i class="material-icons prefix">date_range</i>
                         <input type="text" class="datepicker">
                         <label>Ngày bất kỳ</label>
                     </div>
-                    <div class="input-field col s6 m3" style="border-right: 1px solid #ddd;">
+                    <div class="input-field col s12 m3" style="border-right: 1px solid #ddd;">
                         <i class="material-icons prefix">schedule</i>
                         <input type="text" class="timepicker">
                         <label>Giờ bất kỳ</label>
                     </div>
                     <div class="input-field col s12 m3 center-align">
                         <a class="waves-effect waves-light btn-large"
-                            style="border-radius: 50px; background-color: #1f1f1f;text-transform: none !important;">Tìm
-                            kiếm</a>
+                            style="border-radius: 50px; background-color: #1f1f1f;">Tìm kiếm</a>
                     </div>
                 </div>
             </div>
@@ -333,17 +414,6 @@
                         </div>
                     </div>
                 </a>
-                <a class="carousel-item" href="#five!">
-                    <div class="card">
-                        <div class="card-image"><img src="images/H-chic-hair-salon.jpg"
-                                style="height: 180px; object-fit: cover;">
-                        </div>
-                        <div class="card-content center-align" style="padding: 16px;">
-                            <span class="card-title" style="font-size: 1.2rem; font-weight: 600; color: #000;">Cắt
-                                tóc</span>
-                        </div>
-                    </div>
-                </a>
             </div>
         </div>
     </div>
@@ -370,19 +440,16 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="card-item">
-                    <a href="Green-dot-hair-spa.html" style="color: inherit;">
-                        <div class="card">
-                            <div class="card-image"><img src="images/green-dot-hair-spa.jpg"></div>
-                            <div class="card-content">
-                                <span class="card-title">Green Dot Hair Spa</span>
-                                <p>4.9 <i class="material-icons tiny" style="color: #fbbc05;">star</i> (2,975)</p>
-                                <p class="truncate light">Bình Thạnh, Hồ Chí Minh</p>
-                                <div class="chip">Spa & phòng xông hơi khô</div>
-                            </div>
+                    <div class="card">
+                        <div class="card-image"><img src="images/green-dot-hair-spa.jpg"></div>
+                        <div class="card-content">
+                            <span class="card-title">Green Dot Hair Spa</span>
+                            <p>4.9 <i class="material-icons tiny" style="color: #fbbc05;">star</i> (2,975)</p>
+                            <p class="truncate light">Bình Thạnh, Hồ Chí Minh</p>
+                            <div class="chip">Spa & phòng xông hơi khô</div>
                         </div>
-                    </a>
+                    </div>
                 </div>
                 <div class="card-item">
                     <div class="card">
@@ -417,6 +484,39 @@
                         </div>
                     </div>
                 </div>
+                <div class="card-item">
+                    <div class="card">
+                        <div class="card-image"><img src="images/Lisa-nails-spa.jpg"></div>
+                        <div class="card-content">
+                            <span class="card-title">Lisa Nails Spa & Boutique</span>
+                            <p>4.8 <i class="material-icons tiny" style="color: #fbbc05;">star</i> (1200)</p>
+                            <p class="truncate light">Thủ Đức, Hồ Chí Minh</p>
+                            <div class="chip">Chăm sóc móng</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-item">
+                    <div class="card">
+                        <div class="card-image"><img src="images/MIDO-luxury-spa.jpg"></div>
+                        <div class="card-content">
+                            <span class="card-title">MIDO Luxury Spa</span>
+                            <p>5.0 <i class="material-icons tiny" style="color: #fbbc05;">star</i> (500)</p>
+                            <p class="truncate light">Quận 5, Hồ Chí Minh</p>
+                            <div class="chip">Spa cao cấp</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-item">
+                    <div class="card">
+                        <div class="card-image"><img src="images/phoenix-boutique-salon.jpg"></div>
+                        <div class="card-content">
+                            <span class="card-title">Phoenix Boutique Salon</span>
+                            <p>4.7 <i class="material-icons tiny" style="color: #fbbc05;">star</i> (300)</p>
+                            <p class="truncate light">Gò Vấp, Hồ Chí Minh</p>
+                            <div class="chip">Làm tóc & Nhuộm</div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="slider-nav-btn left" onclick="scrollSlider('recommended-slider-items', -1)"><i
                     class="material-icons">chevron_left</i></div>
@@ -442,7 +542,7 @@
                     </ul>
                 </div>
                 <div class="col l3 s12">
-                    <h5 classV="header" style="font-weight: 600; color: #1f1f1f;">Pháp lý</h5>
+                    <h5 class="header" style="font-weight: 600; color: #1f1f1f;">Pháp lý</h5>
                     <ul>
                         <li><a class="light" style="color: #555;" href="#!">Chính sách quyền riêng tư</a></li>
                         <li><a class="light" style="color: #555;" href="#!">Điều khoản dịch vụ</a></li>
@@ -465,32 +565,36 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
 
+
+
+
             // 1. Kích hoạt Sidenav, Datepicker, Timepicker VÀ Carousel (3D)
             M.AutoInit(); // Tự động khởi tạo tất cả các thành phần Materialize
-
+            const elems = document.querySelectorAll('.dropdown-trigger');
+            M.Dropdown.init(elems, {
+                coverTrigger: false, // Dropdown below the button
+                constrainWidth: false // Keep custom width
+            });
             // 2. Kích hoạt Datepicker (vẫn nên init riêng để set format)
             var datepicker_elems = document.querySelectorAll('.datepicker');
             M.Datepicker.init(datepicker_elems, { format: 'dd/mm/yyyy' });
 
-            // 3. Kích hoạt Parallax (AutoInit đã làm nhưng gọi riêng cho chắc)
+            // 3. Kích hoạt Parallax
             var parallax_elems = document.querySelectorAll('.parallax');
             M.Parallax.init(parallax_elems);
-
-            // 4. Kích hoạt Autocomplete (AutoInit không tự làm tốt phần data)
-            var autocomplete_elems = document.querySelectorAll('.autocomplete');
-            M.Autocomplete.init(autocomplete_elems, {
-                data: {
-                    "Làm móng": null,
-                    "Chăm sóc da": null,
-                    "Massage body": null,
-                    "Gội đầu dưỡng sinh": null,
-                    "Quận 1": null,
-                    "Quận 3": null,
-                }
-            });
         });
 
-        // Hàm xử lý cuộn slider phẳng (giữ nguyên)
+        document.addEventListener('scroll', function () {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+
+        // Hàm xử lý cuộn slider phẳng
         function scrollSlider(sliderId, direction) {
             const slider = document.getElementById(sliderId);
             const scrollAmount = 300; // Số pixel cuộn mỗi lần
